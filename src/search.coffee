@@ -32,7 +32,7 @@ class Search
         return @options.url if @options.url
         pathname = "#{@options.category}/offres/#{@options.region}/#{@options.department}/"
         query    = {}
-        query.o = parseInt @options.page if @options.page > 1
+        query.o = parseInt(@options.page, 10) if @options.page > 1
         query.q = @options.query if @options.query
         query.f = @options.filter if @options.filter in ['c', 'p']
         query.ur = 1 if @options.urgency_only

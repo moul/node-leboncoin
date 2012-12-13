@@ -1,0 +1,132 @@
+<!DOCTYPE html>  <html> <head>   <title>defs.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="defs.html">                 defs.coffee               </a>                                           <a class="source" href="search.html">                 search.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               defs.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="nv">regions_common =</span>
+    <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;occasions&#39;</span><span class="p">,</span> <span class="s">&#39;bonnes_affaires&#39;</span><span class="p">]</span>
+
+<span class="nv">regions_tree =</span>
+    <span class="nv">alsace: </span><span class="p">[</span>
+        <span class="s">&#39;bas_rhin&#39;</span>
+        <span class="s">&#39;haut_rhin&#39;</span>
+        <span class="p">]</span>
+    <span class="nv">aquitaine: </span><span class="p">[]</span>
+    <span class="nv">auvergne: </span><span class="p">[]</span>
+    <span class="nv">basse_normandie: </span><span class="p">[]</span>
+    <span class="nv">bourgogne: </span><span class="p">[]</span>
+    <span class="nv">bretagne: </span><span class="p">[]</span>
+    <span class="nv">centre: </span><span class="p">[]</span>
+    <span class="nv">champagne_ardenne: </span><span class="p">[]</span>
+    <span class="nv">corse: </span><span class="p">[]</span>
+    <span class="nv">franche_comte: </span><span class="p">[]</span>
+    <span class="nv">haute_normandie: </span><span class="p">[</span>
+        <span class="s">&#39;eure&#39;</span>
+        <span class="s">&#39;seine_maritime&#39;</span>
+        <span class="p">]</span>
+    <span class="nv">ile_de_france: </span><span class="p">[</span>
+        <span class="s">&quot;paris&quot;</span>
+        <span class="s">&quot;seine_et_marne&quot;</span>
+        <span class="s">&quot;yvelines&quot;</span>
+        <span class="s">&quot;essonne&quot;</span>
+        <span class="s">&quot;hauts_de_seine&quot;</span>
+        <span class="s">&quot;seine_saint_denis&quot;</span>
+        <span class="s">&quot;val_de_marne&quot;</span>
+        <span class="s">&quot;val_d_oise&quot;</span>
+        <span class="p">]</span>
+    <span class="nv">languedoc_rousillon: </span><span class="p">[]</span>
+    <span class="nv">limousin: </span><span class="p">[]</span>
+    <span class="nv">lorraine: </span><span class="p">[]</span>
+    <span class="nv">midi_pyrenees: </span><span class="p">[]</span>
+    <span class="nv">nord_pas_de_calais: </span><span class="p">[]</span>
+    <span class="nv">pays_de_la_loire: </span><span class="p">[]</span>
+    <span class="nv">picardie: </span><span class="p">[]</span>
+    <span class="nv">poitou_charentes: </span><span class="p">[]</span>
+    <span class="nv">provence_alpes_cote_d_azur: </span><span class="p">[]</span>
+    <span class="nv">rhone_alpes: </span><span class="p">[]</span>
+    <span class="nv">guadeloupe: </span><span class="p">[]</span>
+    <span class="nv">martinique: </span><span class="p">[]</span>
+    <span class="nv">guyane: </span><span class="p">[]</span>
+    <span class="nv">reunion: </span><span class="p">[]</span>
+
+<span class="nv">categories_tree =</span>
+    <span class="nv">_vehicules_:</span>
+        <span class="nv">voitures: </span><span class="p">{}</span>
+        <span class="nv">motos: </span>   <span class="p">{}</span>
+        <span class="nv">caravaning: </span><span class="p">{}</span>
+        <span class="nv">utilitaires: </span><span class="p">{}</span>
+        <span class="nv">equipement_auto: </span><span class="p">{}</span>
+        <span class="nv">equipement_moto: </span><span class="p">{}</span>
+        <span class="nv">equipement_caravaning: </span><span class="p">{}</span>
+        <span class="nv">nautisme: </span><span class="p">{}</span>
+        <span class="nv">equipement_nautisme: </span><span class="p">{}</span>
+    <span class="nv">_immobilier_:</span>
+        <span class="nv">ventes_immobilieres: </span><span class="p">{}</span>
+        <span class="nv">locations:</span>
+            <span class="nv">mrs: </span>                       <span class="c1"># loyer min</span>
+                <span class="nv">type: </span><span class="nb">Number</span>
+            <span class="nv">mre: </span>                       <span class="c1"># loyer max</span>
+                <span class="nv">type: </span><span class="nb">Number</span>
+            <span class="nv">ros: </span>                       <span class="c1"># pieces min</span>
+                <span class="nv">type: </span><span class="nb">Number</span>
+            <span class="nv">roe: </span>                       <span class="c1"># pieces max</span>
+                <span class="nv">type: </span><span class="nb">Number</span>
+            <span class="nv">sqs: </span>                       <span class="c1"># surface min</span>
+                <span class="nv">type: </span><span class="s">&#39;list&#39;</span>
+                <span class="nv">values:</span>
+                    <span class="mi">0</span><span class="o">:</span>  <span class="mi">0</span>
+                    <span class="mi">1</span><span class="o">:</span>  <span class="mi">20</span>
+                    <span class="mi">2</span><span class="o">:</span>  <span class="mi">25</span>
+                    <span class="mi">3</span><span class="o">:</span>  <span class="mi">30</span>
+                    <span class="mi">4</span><span class="o">:</span>  <span class="mi">35</span>
+                    <span class="mi">5</span><span class="o">:</span>  <span class="mi">40</span>
+                    <span class="mi">6</span><span class="o">:</span>  <span class="mi">50</span>
+                    <span class="mi">7</span><span class="o">:</span>  <span class="mi">60</span>
+                    <span class="mi">8</span><span class="o">:</span>  <span class="mi">70</span>
+                    <span class="mi">9</span><span class="o">:</span>  <span class="mi">80</span>
+                    <span class="mi">10</span><span class="o">:</span> <span class="mi">90</span>
+                    <span class="mi">11</span><span class="o">:</span> <span class="mi">100</span>
+                    <span class="mi">12</span><span class="o">:</span> <span class="mi">110</span>
+                    <span class="mi">13</span><span class="o">:</span> <span class="mi">120</span>
+                    <span class="mi">14</span><span class="o">:</span> <span class="mi">150</span>
+                    <span class="mi">15</span><span class="o">:</span> <span class="mi">300</span>
+            <span class="nv">sqe: </span>                       <span class="c1"># surface max</span>
+                <span class="nv">type: </span><span class="s">&#39;list&#39;</span>
+                <span class="nv">values:</span>
+                    <span class="mi">0</span><span class="o">:</span>  <span class="mi">0</span>
+                    <span class="mi">1</span><span class="o">:</span>  <span class="mi">20</span>
+                    <span class="mi">2</span><span class="o">:</span>  <span class="mi">25</span>
+                    <span class="mi">3</span><span class="o">:</span>  <span class="mi">30</span>
+                    <span class="mi">4</span><span class="o">:</span>  <span class="mi">35</span>
+                    <span class="mi">5</span><span class="o">:</span>  <span class="mi">40</span>
+                    <span class="mi">6</span><span class="o">:</span>  <span class="mi">50</span>
+                    <span class="mi">7</span><span class="o">:</span>  <span class="mi">60</span>
+                    <span class="mi">8</span><span class="o">:</span>  <span class="mi">70</span>
+                    <span class="mi">9</span><span class="o">:</span>  <span class="mi">80</span>
+                    <span class="mi">10</span><span class="o">:</span> <span class="mi">90</span>
+                    <span class="mi">11</span><span class="o">:</span> <span class="mi">100</span>
+                    <span class="mi">12</span><span class="o">:</span> <span class="mi">110</span>
+                    <span class="mi">13</span><span class="o">:</span> <span class="mi">120</span>
+                    <span class="mi">14</span><span class="o">:</span> <span class="mi">150</span>
+                    <span class="mi">15</span><span class="o">:</span> <span class="mi">300</span>
+                    <span class="mi">16</span><span class="o">:</span> <span class="s">&#39;350+&#39;</span>
+            <span class="nv">ret:</span>
+                <span class="nv">type: </span><span class="s">&#39;array&#39;</span>
+                <span class="nv">values:</span>
+                    <span class="mi">1</span><span class="o">:</span> <span class="s">&#39;maison&#39;</span>
+                    <span class="mi">2</span><span class="o">:</span> <span class="s">&#39;appartement&#39;</span>
+                    <span class="mi">3</span><span class="o">:</span> <span class="s">&#39;terrain&#39;</span>
+                    <span class="mi">4</span><span class="o">:</span> <span class="s">&#39;parking&#39;</span>
+                    <span class="mi">5</span><span class="o">:</span> <span class="s">&#39;autre&#39;</span>
+        <span class="nv">colocations: </span><span class="p">{}</span>
+        <span class="nv">locations_de_vacances: </span><span class="p">{}</span>
+        <span class="nv">bureaux_commerces: </span><span class="p">{}</span>
+    <span class="nv">_multimedia_: </span><span class="p">{}</span>                    <span class="c1"># TODO</span>
+    <span class="nv">_maison_: </span><span class="p">{}</span>                        <span class="c1"># TODO</span>
+    <span class="nv">_loisirs_: </span><span class="p">{}</span>                       <span class="c1"># TODO</span>
+    <span class="nv">_emploi_services_: </span><span class="p">{}</span>               <span class="c1"># TODO</span>
+    <span class="nv">_:</span>
+        <span class="nv">autres: </span><span class="p">{}</span>
+
+<span class="nv">module.exports =</span>
+    <span class="nv">regions_tree: </span>      <span class="nx">regions_tree</span>
+    <span class="nv">regions: </span>           <span class="nx">k</span> <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="k">of</span> <span class="nx">regions_tree</span>
+    <span class="nv">categories_tree: </span>   <span class="nx">categories_tree</span>
+    <span class="nv">categories: </span>        <span class="nx">k</span> <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="k">of</span> <span class="nx">categories_tree</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
