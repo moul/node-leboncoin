@@ -1,4 +1,3 @@
 module.exports = {
-  search: require('./lib/search'),
-  utils: require('./lib/utils')
+  search: require('./lib/search')
 };

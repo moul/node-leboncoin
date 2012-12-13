@@ -2,7 +2,6 @@ cheerio = require 'cheerio'
 request = require 'request'
 url     = require 'url'
 
-utils   = require './utils'
 defs    = require './defs'
 
 class Search
