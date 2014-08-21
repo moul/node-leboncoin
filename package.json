@@ -2,7 +2,7 @@
   "name": "leboncoin",
   "version": "0.0.2",
   "description": "leboncoin.fr library",
-  "main": "index.js",
+  "main": "lib/search.js",
   "directories": {
     "example": "examples",
     "test": "test"
