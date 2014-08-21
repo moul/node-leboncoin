@@ -1,7 +1,6 @@
 cheerio       = require 'cheerio'
 request       = require 'request'
 
-defs    = require './defs'
 {clean_string} = require './utils'
 
 class Item
@@ -26,7 +25,22 @@ class Item
     return @url
 
   parseHTML: (html) =>
-    throw new Error('Not implemented')
+    attrs = {}
+    opts =
+      normalizeWhitespace: true
+      decodeEntities: true
+    $ = cheerio.load html, opts
+    for row in $('.lbcParams > table > tr')
+      key = clean_string $(row).find('th').html().replace(':', ' ')
+      value = clean_string $(row).find('td').html()
+      attrs[key] = value
+
+    attrs.thumbs = []
+    for thumb in $('#thumbs_carousel .thumbs_cadre span')
+      attrs.thumbs.push $(thumb).css('background-image').split("'")[1]
+
+    attrs.description = clean_string $('.AdviewContent > .content').html()
+    return attrs
 
   perform: (callback) =>
     _url = do @getUrl

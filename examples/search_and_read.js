@@ -17,18 +17,24 @@
   });
 
   search.perform(function(response) {
-    var result, _i, _len, _ref, _results;
+    var item, result, _i, _len, _ref;
     if (response.error) {
       console.err(response.error);
       return;
     }
     _ref = response.results;
-    _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       result = _ref[_i];
-      _results.push(console.log(result));
+      if (!result.image) {
+        continue;
+      }
+      console.log(result);
+      item = new leboncoin.Item(result);
+      item.perform(function(result) {
+        return console.log(result.attrs);
+      });
+      return;
     }
-    return _results;
   });
 
 }).call(this);

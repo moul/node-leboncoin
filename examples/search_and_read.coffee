@@ -19,4 +19,11 @@ search.perform (response) ->
     return
 
   for result in response.results
+    continue unless result.image # comment to get detail for items without images
     console.log result
+
+    item = new leboncoin.Item result
+    item.perform (result) ->
+      console.log result.attrs
+
+    return # comment to do only one item detail
