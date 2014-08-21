@@ -19,4 +19,5 @@ search.perform (response) ->
     console.err response.error
     return
 
-  console.log response.results
+  for result in response.results
+    console.log result

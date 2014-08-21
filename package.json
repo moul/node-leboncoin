@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "cheerio": "0.17",
-    "request": "2.40"
+    "request": "2.40",
+    "html-entities": "1.1"
   },
   "devDependencides": {
     "coffee-script": "*"

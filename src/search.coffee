@@ -1,6 +1,6 @@
-cheerio = require 'cheerio'
-request = require 'request'
-url     = require 'url'
+cheerio       = require 'cheerio'
+request       = require 'request'
+url           = require 'url'
 
 defs    = require './defs'
 {clean_string} = require './utils'
@@ -59,7 +59,7 @@ class Search
     $ = cheerio.load html, opts
     for entry in $('.list-lbc > a')
       date = []
-      date.push $(line).html() for line in $(entry).find('.date div')
+      date.push clean_string $(line).html() for line in $(entry).find('.date div')
 
       results.push
         href:  entry.attribs.href

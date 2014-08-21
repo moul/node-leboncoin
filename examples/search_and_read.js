@@ -17,11 +17,18 @@
   });
 
   search.perform(function(response) {
+    var result, _i, _len, _ref, _results;
     if (response.error) {
       console.err(response.error);
       return;
     }
-    return console.log(response.results);
+    _ref = response.results;
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      result = _ref[_i];
+      _results.push(console.log(result));
+    }
+    return _results;
   });
 
 }).call(this);
