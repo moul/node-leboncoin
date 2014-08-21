@@ -25,4 +25,4 @@ search.perform (response) ->
     item.perform (result) ->
       console.log result.attrs
 
-    return # comment to do only one item detail
+    # return # uncomment to do only one item detail
