@@ -3,10 +3,9 @@
 # clear terminal
 process.stdout.write '\u001B[2J\u001B[0;0f'
 
-#Search = require 'leboncoin'
-Search = require('..')
+leboncoin = require '..'
 
-search = new Search
+search = new leboncoin.Search
   region:   'haute_normandie'
   location: 27000
   category_attrs:

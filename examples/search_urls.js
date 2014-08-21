@@ -2,7 +2,7 @@
 (function() {
   var Search, search, searchs, _i, _len;
 
-  Search = require('..');
+  Search = require('..').Search;
 
   searchs = [];
 

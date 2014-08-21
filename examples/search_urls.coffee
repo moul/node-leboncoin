@@ -3,8 +3,7 @@
 # clear terminal
 # process.stdout.write '\u001B[2J\u001B[0;0f'
 
-#Search = require 'leboncoin'
-Search = require('..')
+{Search} = require '..'
 
 searchs = []
 
