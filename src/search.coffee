@@ -18,7 +18,7 @@ class Search
         @options.shouldbe       ?= ''                           #
         @options.query          ?= null                         #
         @options.region         ?= 'ile_de_france'              #
-        @options.department     ?= 'occasions'                  # toute la france
+        @options.department     ?= null                         #
         @options.urgency_only   ?= false                        #
         @options.sort_by_price  ?= false                        #
         @options.hide_photos    ?= false                        #
@@ -29,7 +29,8 @@ class Search
 
     getUrl: =>
         return @options.url if @options.url
-        pathname = "#{@options.category}/offres/#{@options.region}/#{@options.department}/"
+        pathname = "#{@options.category}/offres/#{@options.region}/"
+        pathname += "#{@options.department}/" if @options.department?
         query    = {}
         query.o = parseInt(@options.page, 10) if @options.page > 1
         query.q = @options.query if @options.query
