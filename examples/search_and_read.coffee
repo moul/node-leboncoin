@@ -14,4 +14,9 @@ search = new Search
     mre:    600         # loyer max = 2300
   category: 'locations'
 
-console.log search.getUrl()
+search.perform (response) ->
+  if response.error
+    console.err response.error
+    return
+
+  console.log response.results

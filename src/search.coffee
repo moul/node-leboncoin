@@ -52,6 +52,11 @@ class Search
 
   parseHTML: (html) =>
     results = []
+    $ = cheerio.load(html)
+    for entry in $('.list-lbc > a')
+      results.push
+        href:  entry.attribs.href
+        title: entry.attribs.title
     return results
 
   perform: (callback) =>

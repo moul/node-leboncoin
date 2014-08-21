@@ -16,6 +16,12 @@
     category: 'locations'
   });
 
-  console.log(search.getUrl());
+  search.perform(function(response) {
+    if (response.error) {
+      console.err(response.error);
+      return;
+    }
+    return console.log(response.results);
+  });
 
 }).call(this);
