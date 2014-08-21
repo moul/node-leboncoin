@@ -1,8 +1,9 @@
 cheerio = require 'cheerio'
 request = require 'request'
-url   = require 'url'
+url     = require 'url'
 
-defs  = require './defs'
+defs    = require './defs'
+{clean_string} = require './utils'
 
 class Search
   constructor: (@options = {}) ->
@@ -52,11 +53,21 @@ class Search
 
   parseHTML: (html) =>
     results = []
-    $ = cheerio.load(html)
+    opts =
+      normalizeWhitespace: true
+      decodeEntities: true
+    $ = cheerio.load html, opts
     for entry in $('.list-lbc > a')
+      date = []
+      date.push $(line).html() for line in $(entry).find('.date div')
+
       results.push
         href:  entry.attribs.href
         title: entry.attribs.title
+        date:  date
+        location: clean_string $(entry).find('.placement').html()
+        price: clean_string $(entry).find('.price').html()
+        image: $(entry).find('.image img').attr('src')
     return results
 
   perform: (callback) =>
