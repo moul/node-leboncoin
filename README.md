@@ -7,6 +7,11 @@ leboncoin.fr nodejs library
 npm install leboncoin
 ```
 
+Usage
+-----
+
+See [Examples directory](https://github.com/moul/node-leboncoin/tree/master/examples) for examples
+
 Development
 -----------
 
