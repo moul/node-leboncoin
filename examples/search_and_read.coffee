@@ -12,6 +12,8 @@ search = new leboncoin.Search
     mre:    600         # loyer max = 600
   category: 'locations'
 
+i = 0
+
 search.perform (response) ->
   if response.error
     console.err response.error
@@ -19,10 +21,14 @@ search.perform (response) ->
 
   for result in response.results
     continue unless result.image # comment to get detail for items without images
-    console.log result
+    console.log 'search', result
 
     item = new leboncoin.Item result
-    item.perform (result) ->
-      console.log result.attrs
 
-    # return # uncomment to do only one item detail
+    item.getPhoneNumber (number) ->
+      console.log 'phone number', number
+
+    item.perform (result) ->
+      console.log 'item page', result.attrs
+
+    return # uncomment to do only one item detail

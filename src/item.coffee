@@ -1,10 +1,12 @@
 cheerio       = require 'cheerio'
 request       = require 'request'
+url           = require 'url'
 
 {clean_string} = require './utils'
 
 class Item
   constructor: (@arg) ->
+    do @getUrl
 
   getUrl: =>
     switch typeof @arg
@@ -22,6 +24,9 @@ class Item
           throw new Error('Item parsing error')
     if @item_id
       @url = "http://www.leboncoin.fr/locations/#{@item_id}.htm?ca=11_s"
+    if @url and not @item_id
+      {pathname} = url.parse @url
+      @item_id = parseInt pathname.split('/').reverse()[0].split('.htm')[0]
     return @url
 
   parseHTML: (html) =>
@@ -42,9 +47,15 @@ class Item
     attrs.description = clean_string $('.AdviewContent > .content').html()
     return attrs
 
+  getPhoneNumber: (callback) =>
+    opts =
+      url: "http://www2.leboncoin.fr/ajapi/get/phone?list_id=#{@item_id}"
+      json: true
+    request opts, (error, response, data) =>
+      callback data?.phoneUrl
+
   perform: (callback) =>
-    _url = do @getUrl
-    request _url, (error, response, html) =>
+    request @url, (error, response, html) =>
       attrs = @parseHTML html
       callback
         error:    error
