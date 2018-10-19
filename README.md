@@ -1,6 +1,8 @@
 node-leboncoin
 ==============
 
+[![GuardRails badge](https://badges.production.guardrails.io/moul/node-leboncoin.svg)](https://www.guardrails.io)
+
 leboncoin.fr nodejs library
 
 ```bash
